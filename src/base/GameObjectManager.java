@@ -49,7 +49,7 @@ public class GameObjectManager {
                 .orElse(null);
     }
 
-    public Enemy checkCollision(Bullet bullet) {
+    public Enemy checkCollision(GameObject bullet) {
         return (Enemy) this.list
                 .stream()
                 .filter(gameObject -> gameObject.isAlive)

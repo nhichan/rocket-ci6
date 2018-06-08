@@ -3,7 +3,9 @@ package game.star;
 import base.FrameCounter;
 import base.GameObject;
 import base.GameObjectManager;
+import game.enemy.Enemy;
 
+import javax.swing.*;
 import java.util.Random;
 
 public class StarSpawner extends GameObject {

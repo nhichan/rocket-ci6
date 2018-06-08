@@ -4,6 +4,7 @@ import base.FrameCounter;
 import base.GameObjectManager;
 import base.Vector2D;
 import game.bullet.Bullet;
+import input.KeyboardInput;
 
 public class PlayerShoot {
     private FrameCounter frameCounter;
@@ -13,7 +14,7 @@ public class PlayerShoot {
     }
 
     public void run(Player player) {
-        if (this.frameCounter.run()) {
+        if (this.frameCounter.run() && KeyboardInput.instance.spacePressed) {
             Bullet bulletPlayer = new Bullet();
             bulletPlayer.position.set(player.position);
 

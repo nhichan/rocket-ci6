@@ -11,7 +11,6 @@ import java.awt.*;
 
 public class Bullet extends GameObject {
     public Vector2D velocity;
-    public BoxCollider boxCollider;
 
     public Bullet() {
         this.velocity = new Vector2D();
