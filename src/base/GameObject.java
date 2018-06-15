@@ -1,6 +1,5 @@
 package base;
 
-import physic.BoxCollider;
 import renderer.Renderer;
 
 import java.awt.*;
@@ -9,7 +8,6 @@ public class GameObject {
     public Vector2D position;
     public Renderer renderer;
     public boolean isAlive = true;
-    public BoxCollider boxCollider;
 
     public GameObject() {
         this.position = new Vector2D();

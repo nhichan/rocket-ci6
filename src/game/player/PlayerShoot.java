@@ -8,23 +8,22 @@ import input.KeyboardInput;
 
 public class PlayerShoot {
     private FrameCounter frameCounter;
+    public Shoot shoot;
+    public SingleShoot singleShoot;
+    public TripleShoot tripleShoot;
 
     public PlayerShoot() {
         this.frameCounter = new FrameCounter(20);
+        this.tripleShoot = new TripleShoot();
+        this.shoot = this.tripleShoot;
     }
 
     public void run(Player player) {
-        if (this.frameCounter.run() && KeyboardInput.instance.spacePressed) {
-            Bullet bulletPlayer = new Bullet();
-            bulletPlayer.position.set(player.position);
-
-            Vector2D rotate = player.playerMove.velocity.add(
-                    (new Vector2D(2, 0)).rotate(player.playerMove.angle)
-            );
-
-            bulletPlayer.velocity.set(rotate);
-            GameObjectManager.instance.add(bulletPlayer);
-            this.frameCounter.reset();
+        if (KeyboardInput.instance.spacePressed) {
+            if (this.frameCounter.run()) {
+                this.shoot.shoot(player);
+                this.frameCounter.reset();
+            }
         }
 
     }
